@@ -17,11 +17,12 @@ def players_step(step, symbol):
     desk[play] = symbol
 
 def is_win():
-    win_combo = ((0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6))
+    win_combo = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]]
     w = ""
     for i in win_combo:
         if desk[i[0]] == "X" and desk[i[1]] == "X" and desk[i[2]] =="X": w = "Игрок 1 (X)"
-        if desk[i[0]] == "O" and desk[i[1]] == "O" and desk[i[2]] =="O": w = "Игрок 2 (O)"  
+        elif desk[i[0]] == "O" and desk[i[1]] == "O" and desk[i[2]] =="O": w = "Игрок 2 (O)"
+        else: break 
     return w
 
 finish = False
